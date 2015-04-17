@@ -38,8 +38,9 @@ WTFs / minute
 ![代码好坏的测试标准](https://github.com/hongbing/article/blob/master/images/standofgoodcode.png)
 
 * 方法
- 写出好代码的方法：
+ 
+如何写出好代码的方法：
 
-![GoodCode](https://github.com/hongbing/article/blob/master/images/howtowritegoodcode.png)
+![GoodCode](https://github.com/hongbing/article/blob/master/images/good_code.png)
 
 *文中图片均来自与网络，只作为学习之用。如果侵犯相关利益人或机构，我会及时撤销，不要来告我哈！*
