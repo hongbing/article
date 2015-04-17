@@ -6,6 +6,7 @@
 分布式系统中，为了实现一致性，一般采用**对称式**和**非对称式**两种server组织方式。
 
 **对称式**：所有的server都具有相同的功能，客户端可以和任意一个server通信。
+
 **非对称式**：有一个leader作为与外界通信的角色，其余server不与外界通信，leader会将数据的变更同步到所有的其他server中。
 
 raft采用的第二种方式，也就是leader—based。
@@ -33,7 +34,7 @@ server之间通过RPC通信，三种角色转换图：
 ![Alt text](https://github.com/hongbing/article/blob/master/images/raftrole.png)
 
 
-为了raft算法的易于理解，raft将算法分为leader election，log replication，safty，membership change几个问题。下面将一一介绍。
+为了raft算法的易于理解，raft将算法分为leader election，log replication，safty，membership change几个子问题。下面将一一介绍。
 
 ###2 **leader election**
 ------------------------------------
@@ -72,7 +73,11 @@ leader不会移除自己的log entry，follower在entry与leader不一致时，�
 
 ###参考资料
 [1] http://raftconsensus.github.io/
+
 [2] http://ramcloud.stanford.edu/raft.pdf
+
 [3]  http://raftconsensus.github.io/
+
 [4] http://raftuserstudy.s3-website-us-west-1.amazonaws.com/raft.mp4
+
 [5] http://www.infoq.com/cn/articles/coreos-analyse-etcd/
