@@ -42,7 +42,16 @@ server之间通过RPC通信，三种角色转换图：
 
 如果存在AppendEntry需要发送，那么发送该AppendEntry，如果没有变更命令，则定时发送HeartBeat（没有内容的AppendEntry）给所有的follower，告知它们leader仍然存在，“**普天之下，莫非王土；率土之滨，莫非王臣**”，不要称王。
 
-follower收到leader的heartbeat，则回复leader，“你是哥”。如果在follower的timout之后，仍然没有收到leader的heartbeat，follower认为leader已挂，“**国不可一日无君**”，因此推举自己为candidate，向所有server发送AppendVote RPC为自己拉票。
+follower收到leader的heartbeat，则回复leader，“你是哥”。如果在follower的timout之后，仍然没有收到leader的heartbeat，follower认为leader已挂，“**国不可一日无君**”，因此推举自己为candidate，向所有server发送AppendVote RPC为自己拉票。此时集群中可能会存在以下三种情况
+
+1. 自身拉票成功，成为leader。
+
+2. 其他candidate成为leader，则降低自己身份为follower。
+
+3. 没有出现leader，则开启下一轮选举，直至出现leader。
+
+为了避免选举过程一直持续无法选出leader，raft采用随机的（100ms-300ms）Timeout值，当timeout时，candidate开始向所有的server发送消息以得到多数投票使自己成为leader。
+
 
 
 
