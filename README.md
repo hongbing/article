@@ -2,4 +2,4 @@
 
 1.[什么样的代码才是好的代码](GoodCode.md)
 
-2.[raft理解](raft)
+2.[raft理解](raft.md)
