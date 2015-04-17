@@ -79,6 +79,7 @@ leader不会移除自己的log entry，follower在entry与leader不一致时，�
 ###5 **membership change**
 ----------------------------------------
 
+暂略
 
 ###参考资料
 [1] http://raftconsensus.github.io/
