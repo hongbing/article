@@ -47,7 +47,9 @@ Leader发送给follower的AppendEntry只有得到大多数的回复后，leader�
 <font color="blue">这里存在着这样一种可能：
 如果leader将appendEntry发送给follower后就挂了，那么应该怎么处理？</font>
 分两种情况：
+
 `1：大多数follower已经接收到AppendEntry`
+
 `2：大多数follower没有接收到AppendEntry`
 
 接下来应该重新选举，
